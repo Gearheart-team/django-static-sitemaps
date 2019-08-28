@@ -204,7 +204,8 @@ class SitemapGenerator(object):
 def generate_sitemap(verbosity):
     if not conf.MOCK_SITE:
         from django.contrib.sites.models import Site
-        for site in Site.objects.all():
+        qs = Site.objects.filter(id__in=conf.SITE_IDS) if conf.SITE_IDS else Site.objects.all()
+        for site in qs:
             generator = SitemapGenerator(verbosity=verbosity, site=site)
             generator.write()
     else:

@@ -52,6 +52,9 @@ _url = getattr(settings, 'STATICSITEMAPS_URL', None)
 # Force the protocol to use with django sites framework
 FORCE_PROTOCOL = getattr(settings, 'STATICSITEMAPS_FORCE_PROTOCOL', None)
 
+# Site IDs
+SITE_IDS = getattr(settings, 'STATICSITEMAPS_SITE_IDS', None)
+
 # Mock django sites framework
 MOCK_SITE = getattr(settings, 'STATICSITEMAPS_MOCK_SITE', False)
 
